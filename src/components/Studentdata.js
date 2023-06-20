@@ -2,7 +2,7 @@ import * as csv from 'csvtojson';
 
 // console.log('csvtojson', csv);
 
-const StudentData = fetch('/Studenten-Mock-data.csv')
+const StudentData = await fetch('/Studenten-Mock-data.csv')
   .then(resp => resp.text())
   .then(text => csv().fromString(text))
   .then((jsonObj)=>{
