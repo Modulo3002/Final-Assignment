@@ -10,8 +10,8 @@ import StudentData from './components/Studentdata';
 
 function App() {
 const dispatch = useDispatch();
-const noDuplicateNames = useSelector((state)=> state.dataReducer)
-console.log(noDuplicateNames);
+const allPeople = useSelector((state)=> state.dataReducer)
+console.log("all ppl in state", allPeople);
   return (
     <>
     <Router>
@@ -30,7 +30,7 @@ console.log(noDuplicateNames);
       </nav>
       <main>
         <Routes>
-        <Route path="/" element={<Home names={noDuplicateNames}/>}/>
+        <Route path="/" element={<Home allPeople={allPeople}/>}/>
         <Route path="/barchart"/>
         <Route path="/linechart"/>
             
