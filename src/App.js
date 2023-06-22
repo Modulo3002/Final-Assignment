@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Link, Route, Routes } from "react-router-dom";
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import Home from './components/Home';
-import StudentData from './components/Studentdata';
+import {StudentData, averageRatingSubject, averageScoreSubject} from './components/Studentdata';
 // import { dataReducer } from './reducers/data';
 
 function App() {
