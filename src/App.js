@@ -11,7 +11,7 @@ import StudentData from './components/Studentdata';
 function App() {
 const dispatch = useDispatch();
 const allPeople = useSelector((state)=> state.dataReducer)
-console.log("all ppl in state", allPeople);
+// console.log("all ppl in state", allPeople);
   return (
     <>
     <Router>
