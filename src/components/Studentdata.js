@@ -9,6 +9,19 @@ const StudentData = await fetch('/Studenten-Mock-data.csv')
     return jsonObj.map(o => {return {...o, difficulty: Number(o.difficulty), rating: Number(o.rating)}})
 })
 
+  //alle namen in een array
+  let allNames = StudentData.map((person)=>{return person.name})
+  let namesOnce = [...new Set (allNames)]
+  const namesOfStudents = namesOnce;
+  // console.log(allNames);
+  console.log(namesOnce);
+
+  //alle subjects in een array
+  let allSubjects = StudentData.map((person)=>{return person.subject});
+  let subjectsOnce = [...new Set (allSubjects)];
+  
+  // console.log(subjectsOnce);
+    
     //gemiddelden per vak
 
     const getAverageScoreSubject =(array)=>{
@@ -56,4 +69,4 @@ const StudentData = await fetch('/Studenten-Mock-data.csv')
 
   const averageRatingSubject = getAverageRating(StudentData)
   
-export { StudentData, averageScoreSubject, averageRatingSubject }
+export { StudentData, averageScoreSubject, averageRatingSubject, namesOfStudents }

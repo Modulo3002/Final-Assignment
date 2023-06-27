@@ -1,4 +1,4 @@
-import StudentData from "../components/Studentdata";
+import {StudentData} from "../components/Studentdata";
 
 export const dataReducer = (state = StudentData, action)=>{
     switch (action.type){
