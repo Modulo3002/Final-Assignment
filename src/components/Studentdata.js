@@ -20,6 +20,8 @@ const StudentData = await fetch('/Studenten-Mock-data.csv')
   let allSubjects = StudentData.map((person)=>{return person.subject});
   let subjectsOnce = [...new Set (allSubjects)];
   
+  const subjects = subjectsOnce;
+
   // console.log(subjectsOnce);
     
     //gemiddelden per vak
@@ -69,4 +71,4 @@ const StudentData = await fetch('/Studenten-Mock-data.csv')
 
   const averageRatingSubject = getAverageRating(StudentData)
   
-export { StudentData, averageScoreSubject, averageRatingSubject, namesOfStudents }
+export { StudentData, averageScoreSubject, averageRatingSubject, namesOfStudents , subjects}
