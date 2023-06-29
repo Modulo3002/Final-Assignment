@@ -50,7 +50,6 @@ const avgRatingSubject = averageRatingSubject;
           {/* {routeNames}   */}
         </Routes>
       </main>
-<img src={logo} className="App-logo" alt="logo" />
     </Router>
   </>
   );
