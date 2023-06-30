@@ -1,41 +1,39 @@
 import React from "react";
-import { StudentData, averageRatingSubject, averageScoreSubject, subjects } from "./Studentdata";
+import { averageRatingSubject, averageScoreSubject } from "./Studentdata";
 import wincTheme from "../utils/Theme";
 import {
   VictoryBar,
   VictoryChart,
   VictoryLabel,
   VictoryAxis,
-  VictoryLine,
   VictoryGroup
 } from "victory";
 
 function Home() {
-    console.log(averageRatingSubject);
-    console.log(averageScoreSubject) 
-    // console.log(Object.entries(averageRatingSubject))   
+// hier worden alle gemiddelden van alle studenten getoond.
+
     const averageRating = Object.entries(averageRatingSubject);
     const averageScore = Object.entries(averageScoreSubject);
 
     const blue={
         backgroundColor: "blue",
         color: "white"
+
       }
       const orange={
         backgroundColor: "orange",
-        color: "white"
       }
-
-
 
 return(
     <>
-      <h5>Dit zijn de gemiddelden van alle studenten</h5>
-      <h5 style={blue}>Gemiddelde "fun" score is aangegeven in de kleur blauw.</h5>
-      <h5 style={orange}>Gemiddelde "moeilijkheids" score is in het oranje.</h5>
-          
-        
-      <VictoryChart theme={wincTheme}  >
+      <h5 style={orange}>Gemiddelde "fun" score is aangegeven in de kleur oranje.</h5>
+      <h5 style={blue}>Gemiddelde "moeilijkheids" score is in het blauw.</h5>
+      <h5>Dit zijn de gemiddelden van alle studenten</h5>          
+      
+      <VictoryChart 
+        theme={wincTheme}   padding={{ top: 20, bottom: 300, right: 300, left: 300 }}
+        animate={{duration: 1200}}
+      >
         <VictoryGroup offset={10}>
           <VictoryBar
             style={{

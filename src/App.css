@@ -1,13 +1,16 @@
-* {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-}
+
 nav{
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   
 }
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
 button {
   text-decoration: none;
   border-style: solid;
@@ -16,6 +19,11 @@ button {
   background-color:orange;
   font-size: 18px; 
   color: white;
+  padding-top: 2px;
+  padding-left: 11px;
+  padding-right: 11px;
+  padding-bottom: 2px;;
+  margin-top: 20px;
 }
 
 button:hover{

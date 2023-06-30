@@ -1,7 +1,7 @@
 import * as csv from 'csvtojson';
 
-// console.log('csvtojson', csv);
 
+// CSV data wordt geconverteerd middels onderstaande asynx function.
 const StudentData = await fetch('/Studenten-Mock-data.csv')
   .then(resp => resp.text())
   .then(text => csv().fromString(text))
@@ -13,7 +13,7 @@ const StudentData = await fetch('/Studenten-Mock-data.csv')
   let allNames = StudentData.map((person)=>{return person.name})
   let namesOnce = [...new Set (allNames)]
   const namesOfStudents = namesOnce;
-  // console.log(allNames);
+  
   console.log(namesOnce);
 
   //alle subjects in een array
@@ -22,10 +22,8 @@ const StudentData = await fetch('/Studenten-Mock-data.csv')
   
   const subjects = subjectsOnce;
 
-  // console.log(subjectsOnce);
-    
-    //gemiddelden per vak
-
+     
+  //gemiddelden per vak
     const getAverageScoreSubject =(array)=>{
       const countSubjects={};
       const countDifficulty={};
@@ -33,14 +31,11 @@ const StudentData = await fetch('/Studenten-Mock-data.csv')
           countSubjects[person.subject] = (countSubjects[person.subject]||0) + 1
           countDifficulty[person.subject] = (countDifficulty[person.subject]||0) + person.difficulty
       });
-      // console.log(countSubjects)
-      // console.log(countDifficulty)
       
      
       const averagePerSubject={};
       for (const subject in countDifficulty) {
           const average = countDifficulty[subject]/countSubjects[subject]
-          // console.log(average)    
           averagePerSubject[subject] = average;
      }
      console.log(averagePerSubject)
@@ -49,6 +44,8 @@ const StudentData = await fetch('/Studenten-Mock-data.csv')
 
   const averageScoreSubject = getAverageScoreSubject(StudentData)
 
+
+  //Gemiddelde rating per student
   const getAverageRating =(array)=>{
       const countSubjects={};
       const countRating={};
@@ -56,13 +53,11 @@ const StudentData = await fetch('/Studenten-Mock-data.csv')
           countSubjects[person.subject] = (countSubjects[person.subject]||0) + 1
           countRating[person.subject] = (countRating[person.subject]||0) + person.rating
       });
-      // console.log(countSubjects)
-      // console.log(countRating)
+
              
       const averagePerSubject={};
       for (const subject in countRating) {
           const average = countRating[subject]/countSubjects[subject]
-          // console.log(average)    
           averagePerSubject[subject] = average;
      }
      console.log(averagePerSubject)
