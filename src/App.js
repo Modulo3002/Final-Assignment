@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Link, Route, Routes, useParams } from "react-router-dom";
@@ -16,7 +15,7 @@ const dispatch = useDispatch();
 const allPeople = useSelector((state)=> state.dataReducer)
 // console.log("all ppl in state", allPeople);
 const linkNames = namesOfStudents.map((name)=>{
-  return <Link to={`/student/${name}`}>{name}</Link>
+  return <button><Link to={`/student/${name}`}>{name}</Link></button>
 })
 console.log(averageRatingSubject)
 const avgRatingSubject = averageRatingSubject;
@@ -28,26 +27,17 @@ const avgRatingSubject = averageRatingSubject;
     <>
     <Router>
       <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/barchart">Barchart</Link>
-          </li>
-          <li>
-            <Link to="/linechart">LineChart</Link>
-          </li>
-        </ul>
+        
+        
+        <button><Link to="/">Home</Link></button>    
+            {linkNames} 
       </nav>
       <main>
-        {linkNames}
+       
         <Routes>
         <Route path="/" element={<Home allPeople={allPeople}/>}/>
-        <Route path="/barchart"/>
-        <Route path="/linechart"/>
+
         <Route path="student/:name" element={<ViewStudent rating={avgRatingSubject}/>} />
-          {/* {routeNames}   */}
         </Routes>
       </main>
     </Router>

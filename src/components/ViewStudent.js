@@ -35,17 +35,15 @@ function ViewStudent(props) {
     }
       return (
       <>
-
-      <p>Dit zijn de gemiddelden van: {params.name}</p>
       <h5 style={orange}>Gemiddelde "fun" score is in het oranje.</h5>
       <h5 style={blue}>Gemiddelde "moeilijkheids" score is in het blauw.</h5>
-          
+      <p>Dit zijn de gemiddelden van: {params.name}</p>          
         
       <VictoryChart theme={wincTheme}  >
         <VictoryGroup offset={10}>
           <VictoryBar
             style={{
-             data:{ fill: "orange"}
+             data:{ fill:"blue"}
              }}
             data={getNewArray}
             y={1}
@@ -55,6 +53,9 @@ function ViewStudent(props) {
                }
           />
           <VictoryBar
+                      style={{
+                        data:{ fill:"orange"}
+                        }}
             data={getNewArray}
             y={2}
             x={0}
@@ -63,9 +64,7 @@ function ViewStudent(props) {
         <VictoryAxis tickLabelComponent={<VictoryLabel angle={70} textAnchor="left"/>} />
         <VictoryAxis tickValues={[0.5,1,1.5,2,2.5,3,3.5,4,4.5,5]} dependentAxis />
       </VictoryChart>
-
-
-      
+     
       <VictoryChart theme={wincTheme}>
         <VictoryLine
           style={{

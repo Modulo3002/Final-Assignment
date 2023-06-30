@@ -17,12 +17,12 @@ function Home() {
     const averageRating = Object.entries(averageRatingSubject);
     const averageScore = Object.entries(averageScoreSubject);
 
-    const purple={
-        backgroundColor: "#bd22dd",
+    const blue={
+        backgroundColor: "blue",
         color: "white"
       }
-      const blue={
-        backgroundColor: "blue",
+      const orange={
+        backgroundColor: "orange",
         color: "white"
       }
 
@@ -30,17 +30,16 @@ function Home() {
 
 return(
     <>
-<div>Home!</div>
-      <p>Dit zijn de gemiddelden van alle studenten</p>
-      <h5 style={purple}>Gemiddelde "fun" score is in het paars.</h5>
-      <h5 style={blue}>Gemiddelde "moeilijkheids" score is in het blauw.</h5>
+      <h5>Dit zijn de gemiddelden van alle studenten</h5>
+      <h5 style={blue}>Gemiddelde "fun" score is aangegeven in de kleur blauw.</h5>
+      <h5 style={orange}>Gemiddelde "moeilijkheids" score is in het oranje.</h5>
           
         
       <VictoryChart theme={wincTheme}  >
         <VictoryGroup offset={10}>
           <VictoryBar
             style={{
-             data:{ fill: "#bd22dd"}
+             data:{ fill: "blue"}
              }}
             data={averageRating}
             y={1}
@@ -50,6 +49,9 @@ return(
                }
           />
           <VictoryBar
+               style={{
+                data:{ fill: "orange"}
+                }}
             data={averageScore}
             y={1}
             x={0}
